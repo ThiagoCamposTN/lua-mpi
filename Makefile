@@ -11,18 +11,16 @@
 #    LUA_HOME = /path/to/lua-5.2.1
 #    LVER = lua-5.2.1 # can be lua-5.1 or other
 #
-#
 # 3. Optionally, you may install local Lua sources by typing `make lua`.
 #
-#
-# 4. Run `make`.
-#
-#
-# 5. Then your Makefile.in will look like this
+# 4. In that case, your Makefile.in will look like this
 #
 #    CC = mpicc
 #    LUA_HOME = ./lua-5.2.1
 #    LVER = lua-5.2.1 # can be lua-5.1 or other
+#
+# 5. Run `make`.
+#
 # ------------------------------------------------------------------------------
 
 MAKEFILE_IN = Makefile.in
