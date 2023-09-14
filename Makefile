@@ -53,7 +53,7 @@ mpifuncs.c :
 	python readspec.py > $@
 
 lua-mpi.o : lua-mpi.c mpifuncs.c
-	$(CC) $(CFLAGS) -shared -fPIC -c -o $@ $< $(LUA_I)
+	$(CC) $(CFLAGS) -c -o $@ $< $(LUA_I)
 
 buffer.o : buffer.c
 	$(CC) $(CFLAGS) -c -o $@ $< $(LUA_I)
@@ -68,10 +68,10 @@ clean :
 	$(RM) *.o mpifuncs.c main
 
 MPI.so: lua-mpi.o
-	$(CC) $(CFLAGS) -shared -fPIC -o $@ $< $(LUA_I) $(LUA_L)
+	$(CC) $(CFLAGS) -o $@ $< $(LUA_I) $(LUA_L)
 
 buffer.so: buffer.o
-	$(CC) $(CFLAGS) -shared -fPIC -o $@ $< $(LUA_I) $(LUA_L)
+	$(CC) $(CFLAGS) -o $@ $< $(LUA_I) $(LUA_L)
 
 # Also remove local Lua sources
 realclean : clean
