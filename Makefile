@@ -9,10 +9,6 @@
 #
 #    CC = mpicc
 #    LUA_HOME = /path/to/lua-5.2.1
-#
-#    # Additional compile flags are optional:
-#
-#    CFLAGS = -Wall -O2
 #    LVER = lua-5.2.1 # can be lua-5.1 or other
 #
 #
@@ -21,6 +17,12 @@
 #
 # 4. Run `make`.
 #
+#
+# 5. Then your Makefile.in will look like this
+#
+#    CC = mpicc
+#    LUA_HOME = ./lua-5.2.1
+#    LVER = lua-5.2.1 # can be lua-5.1 or other
 # ------------------------------------------------------------------------------
 
 MAKEFILE_IN = Makefile.in
