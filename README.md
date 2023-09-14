@@ -29,6 +29,13 @@ MPI.Finalize()
 
 Make sure you have the MPI sources installed.
 
+You can do it in Linux like this for example:
+
+```bash
+apt install mpich
+```
+
+Check you have `mpicc`
 
 Create a file called `Makefile.in` which contains macros like these:
 
