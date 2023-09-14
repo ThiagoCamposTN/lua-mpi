@@ -7,20 +7,22 @@ scripting language.
 
 # Example usage
 
-    local MPI = require 'MPI'
-    local buffer = require 'buffer'
+```lua
+local MPI = require 'MPI'
+local buffer = require 'buffer'
 
-    local size = buffer.new_buffer(buffer.sizeof(buffer.int))
-    local rank = buffer.new_buffer(buffer.sizeof(buffer.int))
+local size = buffer.new_buffer(buffer.sizeof(buffer.int))
+local rank = buffer.new_buffer(buffer.sizeof(buffer.int))
 
-    MPI.Init()
-    MPI.Comm_rank(MPI.COMM_WORLD, rank)
-    MPI.Comm_size(MPI.COMM_WORLD, size)
-   
-    print(buffer.get_typed(rank, buffer.int, 0))
-    print(buffer.get_typed(size, buffer.int, 0))
-   
-    MPI.Finalize()
+MPI.Init()
+MPI.Comm_rank(MPI.COMM_WORLD, rank)
+MPI.Comm_size(MPI.COMM_WORLD, size)
+
+print(buffer.get_typed(rank, buffer.int, 0))
+print(buffer.get_typed(size, buffer.int, 0))
+
+MPI.Finalize()
+```
 
 
 # Build instructions
@@ -42,7 +44,7 @@ Run `make`.
 
 Optionally, you may install local Lua sources by typing `make lua`.
 
-Your `Makefile.in` will be something like this:
+In this casa, your `Makefile.in` will be something like this:
 
 ```
 CC = mpicc
