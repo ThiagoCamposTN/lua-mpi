@@ -40,7 +40,7 @@ In this case, `path/to/lua-5.2.1` must contain a compiled lua with the `-fPIC` f
 
 Run `make`.
 
-Optionally, you may install local Lua sources by typing `make lua-5.2.1`.
+Optionally, you may install local Lua sources by typing `make lua`.
 
 Your `Makefile.in` will be something like this:
 
