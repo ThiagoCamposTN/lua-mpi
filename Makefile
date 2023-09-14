@@ -45,7 +45,7 @@ lua : $(LVER)
 $(LVER) :
 	$(CURL) http://www.lua.org/ftp/$(LVER).tar.gz -o $(LVER).tar.gz
 	$(UNTAR) $(LVER).tar.gz
-	$(CD) $(LVER); $(MAKE) $(OS) CC=$(CC); \
+	$(CD) $(LVER); $(MAKE) $(OS) CC=$(CC) CFLAGS="-fPIC"; \
 		$(MAKE) install INSTALL_TOP=$(PWD)/$(LVER)
 	$(RM) $(LVER).tar.gz
 
