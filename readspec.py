@@ -170,15 +170,15 @@ for spec in os.listdir('specs'):
 
 for func in luampi_funcs:
     try:
-        print func.write()
+        print(func.write())
         wrapped_funcs.append(func.func_name)
     except ValueError as e:
-        pass #print e
+        pass #print(e)
 
-print "luaL_Reg MPI_module_funcs[] = {"
+print("luaL_Reg MPI_module_funcs[] = {")
 for func in wrapped_funcs + mpi_byhandfuncs:
-    print "  { \"%s\", _%s}," % (func.replace('MPI_', ''), func)
-print "  {NULL, NULL}};"
+    print("  { \"%s\", _%s}," % (func.replace('MPI_', ''), func))
+print("  {NULL, NULL}};")
 
 
 
