@@ -28,22 +28,27 @@ scripting language.
 Make sure you have the MPI sources installed.
 
 
-Create a file called Makefile.in which contains macros like these:
+Create a file called `Makefile.in` which contains macros like these:
 
-    CC = mpicc
-    LUA_HOME = /path/to/lua-5.2.1
+```
+CC = mpicc
+LUA_HOME = /path/to/lua-5.2.1
+LVER = lua-5.2.1 # can be lua-5.1 or other
+```
 
-    # Additional compile flags are optional:
-
-    CFLAGS = -Wall -O2
-    LVER = lua-5.2.1 # can be lua-5.1 or other
-
-
-Optionally, you may install local Lua sources by typing `make lua`.
-
+In this case, `path/to/lua-5.2.1` must contain a compiled lua with the `-fPIC` flag.
 
 Run `make`.
 
+Optionally, you may install local Lua sources by typing `make lua`.
+
+Your `Makefile.in` will be something like this:
+
+```
+CC = mpicc
+LUA_HOME = ./lua-5.2.1
+LVER = lua-5.2.1 # can be lua-5.1 or other
+```
 
 
 # License
