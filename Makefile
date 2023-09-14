@@ -62,13 +62,13 @@ main.o : main.c
 	$(CC) -Wall -shared -fPIC -c -o $@ $< $(LUA_I)
 
 main : main.o lua-mpi.o buffer.o
-	$(CC) -o $@ $^ $(LUA_L)
+	$(CC) -o $@ $^ $(LUA_L) -lm
 
 clean :
 	$(RM) *.o mpifuncs.c main
 
 MPI.so: lua-mpi.o
-	$(CC) -Wall -shared -fPIC -o $@ $< $(LUA_I) $(LUA_L) -lm
+	$(CC) -Wall -shared -fPIC -o $@ $< $(LUA_I) $(LUA_L)
 
 buffer.so: buffer.o
 	$(CC) -Wall -shared -fPIC -o $@ $< $(LUA_I) $(LUA_L)
